@@ -1,17 +1,15 @@
 import inquirer from 'inquirer';
-import express from 'express';
 import { QueryResult } from 'pg';
 import { pool, connectToDb } from './connection.js';
 
 await connectToDb();
 
-const PORT = process.env.PORT || 3001;
-const app = express();
 
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
 
-const menu = [
+
+function startMenu(): void {
+    inquirer
+      .prompt([
 
     {
         type: 'list',
@@ -36,17 +34,84 @@ const menu = [
             ],
 
     },
+])
+.then((response) => {
 
-]; //Menu
+    switch (response.menu) {
+        case 'View all Employees':
+            Employee();
+             
+        break;
+        case 'Add Employee':
+        //create functions in each case.
+        break;
+        case 'Update Employee Role':
+
+        break;
+        case 'View All Roles':
+
+        break;
+        case 'Add Role':
+
+        break;
+        case 'View All Departments':
+
+        break;
+        case 'Add Department':
+
+        break;
+        case 'Update employee managers':
+
+        break;
+        case 'View employees by manager':
+
+        break;
+        case 'View employees by department':
+
+        break;
+        case 'Delete Department':
+
+        break;
+        case 'Delete Roles':
+
+        break;
+        case 'Delete Employees':
+
+        break;
+        case 'View the total utilized budget of a department':
+
+        break;
+        default:
+            process.exit(0);
+    }//switch
+
+  });
+
+}//startMenu
+
+function Employee(): void {
+console.log(`Is this working?`);
+
+const sql = `SELECT * FROM employee`;
+  pool.query(sql, (err: Error, result: QueryResult) => {
+    if (err) {
+      
+      return;
+    }//if
+    const { rows } = result;
+    console.log(rows);
+   startMenu();
+
+});
+}//employee fucntion
+
+
 
 function init() {
-    /*inquirer.prompt(menu).then((answers) => {
-        const init = connection(answers);
-
-    });*/
+    startMenu();
 
 
 }//function init()
 
-
 init();
+
