@@ -38,6 +38,7 @@ function startMenu() {
             case 'Update Employee Role':
                 break;
             case 'View All Roles':
+                Roles();
                 break;
             case 'Add Role':
                 break;
@@ -75,7 +76,18 @@ function Employee() {
         console.log(rows);
         startMenu();
     });
-} //employee fucntion
+} //employee function
+function Roles() {
+    const sql = `SELECT * FROM employeeRole`;
+    pool.query(sql, (err, result) => {
+        if (err) {
+            return;
+        } //if
+        const { rows } = result;
+        console.log(rows);
+        startMenu();
+    });
+} //Roles function
 function init() {
     startMenu();
 } //function init()
