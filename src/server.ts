@@ -244,8 +244,86 @@ function UpdateEmployeeManagers(): void {
             
             });
       }//ViewEmployeesByManager function
+
+
+      function ViewEmployeesByDepartment(): void {
+
+        const sql = ``;
+          pool.query(sql, (err: Error, result: QueryResult) => {
+            if (err) {
+              
+              return;
+            }//if
+            const { rows } = result;
+            console.log(rows);
+           startMenu();
+        
+        });
+  }//ViewEmployeesByDepartment function
+
+
   
+  function DeleteDepartment(): void {
+
+    const sql = ``;
+      pool.query(sql, (err: Error, result: QueryResult) => {
+        if (err) {
+          
+          return;
+        }//if
+        const { rows } = result;
+        console.log(rows);
+       startMenu();
     
+    });
+}//DeleteDepartment function
+
+
+function DeleteRoles(): void {
+
+  const sql = ``;
+    pool.query(sql, (err: Error, result: QueryResult) => {
+      if (err) {
+        
+        return;
+      }//if
+      const { rows } = result;
+      console.log(rows);
+     startMenu();
+  
+  });
+}//DeleteRoles function
+  
+function DeleteEmployees(): void {
+
+  const sql = ``;
+    pool.query(sql, (err: Error, result: QueryResult) => {
+      if (err) {
+        
+        return;
+      }//if
+      const { rows } = result;
+      console.log(rows);
+     startMenu();
+  
+  });
+}//DeleteEmployees function
+
+
+function Total(): void {
+
+  const sql = ``;
+    pool.query(sql, (err: Error, result: QueryResult) => {
+      if (err) {
+        
+        return;
+      }//if
+      const { rows } = result;
+      console.log(rows);
+     startMenu();
+  
+  });
+}//Total function
   
 
 
