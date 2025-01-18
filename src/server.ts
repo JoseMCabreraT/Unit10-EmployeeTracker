@@ -142,11 +142,11 @@ function AddEmployee(): void {
   inquirer.prompt([
 {
 name: 'first_name',
-message: 'What is the employee\'s first name?',
+message: 'What is the employee first name?',
 },
 {
 name: 'last_name',
-message: 'What is the employee\'s last name?',
+message: 'What is the employee last name?',
 }
 
   ]).then((res) => {
@@ -154,7 +154,8 @@ const firstName = res.first_name;
 const lastName = res.last_name;
   });
 
-      const sql = `SELECT role.id, role.title, department.name AS department, role.salary FROM role LEFT JOIN department on role.department_id = department.id;`;
+      const sql = `INSERT INTO employee (first_name, last_name)
+       VALUES (firstName, lastName);`;
         pool.query(sql, (err: Error, result: QueryResult) => {
           if (err) {
             
@@ -184,7 +185,22 @@ function UpdateEmployeeRole(): void {
 
 function AddRole(): void {
 
-          const sql = ``;
+  inquirer.prompt([
+    {
+    name: 'roleName',
+    message: 'What is the new role name?',
+    },
+    {
+    name: 'salary',
+    message: 'What is the role salary?',
+    }
+    
+      ]).then(() => {
+    
+      });
+
+          const sql = `INSERT INTO employeeRole (title, salary)
+          VALUES (, );`;
             pool.query(sql, (err: Error, result: QueryResult) => {
               if (err) {
                 
@@ -200,7 +216,18 @@ function AddRole(): void {
 
 function AddDepartment(): void {
 
-            const sql = ``;
+  inquirer.prompt([
+    {
+    name: 'DepartmentName',
+    message: 'What is the new department name?',
+    },
+    
+      ]).then(() => {
+    
+      });
+
+            const sql = `INSERT INTO department (department_name)
+            VALUES ();`;
               pool.query(sql, (err: Error, result: QueryResult) => {
                 if (err) {
                   
@@ -232,7 +259,7 @@ function UpdateEmployeeManagers(): void {
       
     function ViewEmployeesByManager(): void {
 
-            const sql = ``;
+            const sql = `SELECT * FROM employee`;
               pool.query(sql, (err: Error, result: QueryResult) => {
                 if (err) {
                   
@@ -265,7 +292,7 @@ function UpdateEmployeeManagers(): void {
   
   function DeleteDepartment(): void {
 
-    const sql = ``;
+    const sql = `DELETE FROM department WHERE id = 2;`;
       pool.query(sql, (err: Error, result: QueryResult) => {
         if (err) {
           
@@ -281,7 +308,7 @@ function UpdateEmployeeManagers(): void {
 
 function DeleteRoles(): void {
 
-  const sql = ``;
+  const sql = `DELETE FROM employeeRole WHERE id = 2;`;
     pool.query(sql, (err: Error, result: QueryResult) => {
       if (err) {
         
@@ -296,7 +323,7 @@ function DeleteRoles(): void {
   
 function DeleteEmployees(): void {
 
-  const sql = ``;
+  const sql = `DELETE FROM employee WHERE id = 2;`;
     pool.query(sql, (err: Error, result: QueryResult) => {
       if (err) {
         
