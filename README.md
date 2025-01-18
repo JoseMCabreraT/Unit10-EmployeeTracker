@@ -14,6 +14,13 @@ Link to the walkthrough video of the app:
 
 ## Usage
 
+![alt text]()
+
+![alt text]()
+
+![alt text]()
+
+
 ## Credits
 
 Cabrera, Jose   https://github.com/JoseMCabreraT
