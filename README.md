@@ -2,7 +2,7 @@
 
 ## Description
 
-
+I built an application where the users can keep track of the employees they have in a company. The app is able to do many functions, such as view all the employees, add a new employee, update the employee role, view all roles, add a new role, view all the departments, add a new department, update the employee managers, view the meployees by manager, view the employees by department, delete a department, delete a role, and delete employees. This app was built using the inquirer and pg packages.
 
 Link to the walkthrough video of the app: 
 
@@ -14,7 +14,7 @@ Link to the walkthrough video of the app:
 
 ## Usage
 
-![alt text]()
+![alt text](./assets/ERD.png)
 
 ![alt text]()
 
