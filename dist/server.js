@@ -75,7 +75,7 @@ function startMenu() {
                 process.exit(0);
         } //switch
     });
-} //startMenu
+} //startMenu function
 function Employee() {
     const sql = `SELECT * FROM employee`;
     pool.query(sql, (err, result) => {
@@ -135,6 +135,17 @@ function AddEmployee() {
     });
 } //AddEmployee function
 function UpdateEmployeeRole() {
+    inquirer.prompt([
+        {
+            name: 'first_name',
+            message: 'What is the employee first name?',
+        },
+        {
+            name: 'last_name',
+            message: 'What is the employee last name?',
+        }
+    ]).then(() => {
+    });
     const sql = ``;
     pool.query(sql, (err, result) => {
         if (err) {

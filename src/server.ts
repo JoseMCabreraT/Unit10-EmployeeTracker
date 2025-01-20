@@ -40,18 +40,15 @@ function startMenu(): void {
     switch (response.menu) {
         case 'View all Employees':
             Employee();
-             
         break;
         case 'Add Employee':
           AddEmployee();
-      
         break;
         case 'Update Employee Role':
           UpdateEmployeeRole();
         break;
         case 'View All Roles':
           Roles();
-
         break;
         case 'Add Role':
           AddRole();
@@ -89,7 +86,7 @@ function startMenu(): void {
 
   });
 
-}//startMenu
+}//startMenu function
 
 function Employee(): void {
 
@@ -149,9 +146,9 @@ name: 'last_name',
 message: 'What is the employee last name?',
 }
 
-  ]).then((res) => {
-const firstName = res.first_name;
-const lastName = res.last_name;
+  ]).then(() => {
+//const firstName = res.first_name;
+//const lastName = res.last_name;
   });
 
       const sql = `INSERT INTO employee (first_name, last_name)
@@ -170,6 +167,21 @@ const lastName = res.last_name;
 
 function UpdateEmployeeRole(): void {
 
+
+  inquirer.prompt([
+    {
+    name: 'first_name',
+    message: 'What is the employee first name?',
+    },
+    {
+    name: 'last_name',
+    message: 'What is the employee last name?',
+    }
+    
+      ]).then(() => {
+   
+      });
+
         const sql = ``;
           pool.query(sql, (err: Error, result: QueryResult) => {
             if (err) {
@@ -181,7 +193,7 @@ function UpdateEmployeeRole(): void {
            startMenu();
         
         });
-        }//UpdateEmployeeRole function
+}//UpdateEmployeeRole function
 
 function AddRole(): void {
 
